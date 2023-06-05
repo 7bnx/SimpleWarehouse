@@ -1,0 +1,4 @@
+﻿{
+  "ConnectionString": "Data Source=simplewarehouse.db",
+  "LoggerName": "SimpleWarehouse Logger"
+}

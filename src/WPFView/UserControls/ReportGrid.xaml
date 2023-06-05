@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="SimpleWarehouse.WPFView.ReportGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SimpleWarehouse.WPFView"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+  <Grid Grid.Row="3" Grid.Column="1">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="40"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="25"/>
+    </Grid.RowDefinitions>
+    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+      <StackPanel.Resources>
+        <Style TargetType="{x:Type CheckBox}" >
+          <Setter Property="Margin" Value="10,0,10,0"/>
+          <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+      </StackPanel.Resources>
+      <Label Content="От"></Label>
+      <DatePicker Name="DatePicker_From" Width="100"/>
+      <Label Content="До"></Label>
+      <DatePicker Name="DatePicker_To" Width="100"/>
+      <StackPanel Name="ChckBxStPanel" Orientation="Horizontal"/>
+      <Button Width="75" Content="Применить" Name="Apply" Click="Apply_ClickAsync"></Button>
+    </StackPanel>
+    <local:ProductsGrid Grid.Row="1" x:Name="ProductsGrid" EnableContextMenu="False" RefreshOnReload="False"/>
+    <StackPanel Orientation="Horizontal" Grid.Row="2">
+      <Label Content="Количество:"></Label>
+      <Label Name="LblCount" Content="0"></Label>
+    </StackPanel>
+  </Grid>
+</UserControl>

@@ -1,0 +1,20 @@
+﻿<Window x:Class="SimpleWarehouse.WPFView.AddProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleWarehouse.WPFView"
+        mc:Ignorable="d"
+        Title="Добавить Товар" Height="240" Width="250" MinHeight="0" MinWidth="0" WindowStartupLocation="CenterScreen" WindowState="Normal">
+  <Grid>
+    <StackPanel>
+      <Label Content="Дата добавления:" HorizontalAlignment="Left"/>
+      <DatePicker Name="ProductAddDatePicker" PreviewTextInput="ProductAddDate_PreviewTextInput"/>
+      <Label Name="lblInvalidDate" Content="Введите корректную дату" Foreground="Red" Visibility="Hidden"/>
+      <Label Content="Название товара"/>
+      <TextBox Name="TxtBoxProductName"></TextBox>
+      <Label Name="lblInvalidProductName" Content="Название товара не должно быть пустым" Foreground="Red" Visibility="Hidden"/>
+      <Button Name="BtnAdd" Height="24" VerticalAlignment="Top" HorizontalAlignment="Center" Width="100" Margin="0,30,0,0" Content="Добавить" Click="BtnAdd_Click"></Button>
+    </StackPanel>
+  </Grid>
+</Window>
